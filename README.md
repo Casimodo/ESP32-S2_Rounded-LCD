@@ -1,0 +1,11 @@
+# NOTA
+Commentaire sur Amazon source : https://www.amazon.fr/dp/B0CM68M8LR/ref=sspa_dk_detail_6?psc=1&pd_rd_i=B0CM68M8LR&pd_rd_w=9YX3k&content-id=amzn1.sym.bebca2a6-c9e4-4073-8fe8-a15bac2d53a9&pf_rd_p=bebca2a6-c9e4-4073-8fe8-a15bac2d53a9&pf_rd_r=E5D3QNHEY2NW36YRC3BS&pd_rd_wg=4ToLY&pd_rd_r=a7bec428-c927-445e-acc9-610593297227&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM#customerReviews
+
+Pour le programmer, vous pouvez utiliser l'IDE Arduino, VSCode avec PlatformIO ou d'autres outils et frameworks de développement ; comme malgré une bonne expérience, 
+il m'a fallu un certain temps pour compiler les exemples, voici quelques conseils pour configurer l'environnement avec l'IDE Arduino, celui qui est le plus abordable : 1.
+Installez le support ESP32 d'Espressif via le gestionnaire de cartes 2.
+En tant que carte, vous pouvez sélectionner la carte « Module de développement ESP32S3 » et configurer la communication virtuelle USB pour le téléchargement ; de plus, dans le menu Outils, il est nécessaire de définir FlashSize=16 Mo et PSRAM=QSPI 3.
+Pour l'affichage, le driver le plus utilisé est la bibliothèque TFT_ESPI, la dernière version 2.5.43 convient, mais il faut la configurer en éditant le fichier User_Setup_Select.h, en désactivant l'inclusion générique 'User_Setup.h' et en activant 'User_Setups/Setup302_WaveShare_ESP32S3_GC9A01.h' ; j'ai également dû ajouter une définition TOUCHCH _CS 9 pour la broche de l'écran tactile, sinon les exemples 4 ne seraient pas compilés.
+Presque tous les exemples utilisent la bibliothèque graphique LVGL.io : j'ai utilisé la version 8.4 (pas la dernière) et il est nécessaire de créer le fichier lv_conf.h avec les paramètres dans le dossier de la bibliothèque (il est préférable de le copier à partir du fichier zip d'exemple) ; si vous souhaitez utiliser les démos, vous devez également copier le dossier lvgl/demos dans le chemin lvgl/src/demos. D'autres exemples utilisent également la bibliothèque LovyangFX.
+5. L'écran tactile capacitif CST816S utilise l'interface I2C et il existe une bibliothèque simple à utiliser qui gère les principaux gestes (balayage vers le haut/le bas/la gauche/la droite, etc.) ; l'adresse I2C à définir est la valeur par défaut 0x15 6.
+Enfin, pour utiliser l'IMU à 6 axes, vous pouvez prendre le code d'un exemple ou installer l'une des bibliothèques : FastIMU, Qmi8658C ou SensorLib.
