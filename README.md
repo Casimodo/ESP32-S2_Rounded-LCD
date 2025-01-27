@@ -5,6 +5,9 @@ produit: https://www.amazon.fr/dp/B0DJVYJH7Q?ref=ppx_yo2ov_dt_b_fed_asin_title
 Wiki: https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.28
 lib LVGL: https://github.com/lvgl/lvgl/tree/master
 
+https://github.com/h1f1x/iot-esp32-touch
+
+
 ## NOTA
 
 Avis sur Amazon source
