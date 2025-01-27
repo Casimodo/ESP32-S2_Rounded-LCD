@@ -1,7 +1,7 @@
 #include <lvgl.h>
 #include <TFT_eSPI.h>
 
-LV_IMG_DECLARE(my_image);
+// LV_IMG_DECLARE(my_image);
 
 // Configuration de l'écran
 TFT_eSPI tft = TFT_eSPI();
