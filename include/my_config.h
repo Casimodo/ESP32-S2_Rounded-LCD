@@ -1,3 +1,16 @@
+/**
+ * @file my_config.h
+ * Juste my config
+ */
+
+/*====================
+   PRECISION POUR LE TOUCH SCREEN fred
+ *====================*/
+#define TOUCH_CS 9
+
+/*====================
+   RESTE DE LA CONFIG
+ *====================*/
 #define USER_SETUP_ID 207
 #define USER_SETUP_INFO "ESP32-S3-Touch-LCD-1.28"
 

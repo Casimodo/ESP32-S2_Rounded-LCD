@@ -181,6 +181,8 @@
 /*Using LVGL with Arduino requires some extra steps:
  *Be sure to read the docs here: https://docs.lvgl.io/master/get-started/platforms/arduino.html  */
 
+#include "lv_conf.h"
+#include "my_config.h"
 #include <lvgl.h>
 #include <TFT_eSPI.h>
 
@@ -190,8 +192,8 @@
  as the examples and demos are now part of the main LVGL library. */
 
 /*Change to your screen resolution*/
-static const uint16_t screenWidth  = 480;
-static const uint16_t screenHeight = 320;
+static const uint16_t screenWidth  = 240;
+static const uint16_t screenHeight = 240;
 
 static lv_disp_draw_buf_t draw_buf;
 static lv_color_t buf[ screenWidth * screenHeight / 10 ];
